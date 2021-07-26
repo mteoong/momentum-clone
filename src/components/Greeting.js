@@ -13,13 +13,13 @@ class Greeting extends Component {
     const hrs = new Date().getHours();
     switch (true) {
       case (hrs >= 0 && hrs < 12):
-        return 'Good morning';
+        return 'Good morning, ';
       case (hrs >= 12 && hrs < 18):
-        return 'Good afternoon';
+        return 'Good afternoon, ';
       case (hrs >= 18 && hrs <= 23):
-        return 'Good evening';
+        return 'Good evening, ';
       default:
-        return 'Hello';
+        return 'Hello, ';
     }
   }
 
@@ -53,7 +53,7 @@ class Greeting extends Component {
     return (
       <div className="greeting-container">
         <span>
-          {this.state.typeGreeting}, 
+          {this.state.typeGreeting} 
         </span>
         <span className="name" contentEditable="true"
           onChange={e => this.onSubmit(e)}

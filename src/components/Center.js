@@ -37,7 +37,7 @@ class Center extends Component {
         return (
             <section className="greeting white">
                 <div>
-                    <h2>
+                    <h2 className="time">
                         {this.state.time}
                     </h2>
                 </div>

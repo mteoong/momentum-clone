@@ -20,6 +20,7 @@ class App extends Component {
   componentDidMount = () => {
     const getImageDetails = async () => {
       let imageInfo = await imageDetails();
+      console.log(imageInfo);
       try {
         this.setState({
           image: imageInfo.urls.full,

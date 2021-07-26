@@ -3,6 +3,8 @@ html {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
   
   *, *::after, *::before {
@@ -14,327 +16,126 @@ body {
   background-repeat: no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.hide {
-  display: none !important;
+  padding: 0;
+  margin: 0;
 }
 
 .white {
-  color: #fff;
+  color: white;
 }
 
-.top-container,
-.lower-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+.today {
+  margin-top: 50px;
 }
 
-
-
-.middle-container {
-  height: 60vh;
-}
-.dropdown {
-  background-color: rgba(15, 15, 15, 0.925);
-  padding: 1%;
-  border-radius: 5px;
-  display: none;
-  z-index: 999;
+.today-prompt > h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
 }
 
-.gray-button {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  font-size: 0.875rem;
-}
-/* greeting section */
-.greeting {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8%;
-}
-
-.greeting h2 {
-  font-size: 15rem;
-}
-
-.greeting span {
-  margin-top: -30px;
-  font-size: 3rem;
-}
-
-/* main goal section */
-
-.main-goal {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-[class*="input-"] {
+.input-box {
   border: none;
   background: transparent;
   border-bottom: 3px white solid;
   width: 100%;
-  max-width: 400px;
+  max-width: 512px;
   font-weight: bold;
   color: #fff;
   text-align: center;
-  height: 20px;
-}
-
-.main-goal h2 {
-  font-weight: normal;
+  height: 50px;
+  margin-top: 0;
+  margin: auto;
+  display: block;
   font-size: 3rem;
+  font-weight: 500;
 }
 
-[class*="input-"]:focus {
+.input-box:focus {
   outline: none;
-  caret-color: #fff;
 }
 
-[class*="input-"]::placeholder {
-  color: #ccc;
+.main-goal {
+  margin-top: 5%;
 }
 
-.main-goal input:checked ~ .custom-checkbox,
-.todo-mini-item input:checked ~ .custom-todo-checkbox {
-  text-decoration: line-through;
+.today {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin: 10pt;
+  text-align: center;
 }
 
 .main-goal-item {
-  font-size: 1.3rem;
+  font-size: 2rem;
   margin-left: 10px;
 }
-/* Weather section*/
-.weather {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-end;
-  font-size: 1.625rem;
-}
 
-.current-weather {
-  font-size: 14px;
-  margin-top: -10px;
-}
-/*quote section */
-
-.quote {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-end;
-  align-items: center;
-}
-.quote-text {
-  font-size: 1.2rem;
-}
-
-.quote-attr {
-  font-size: 1rem;
-  padding-left: 5px;
-}
-
-.quote-attr a {
-  color: #fff;
-  margin-left: 4px;
-  vertical-align: middle;
-}
-
-/* todo section */
-.todo {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.todo p {
-  cursor: pointer;
-  justify-content: flex-end;
-  font-size: 1.2rem;
-}
-
-.todo-lightbox {
-  background-color: rgba(15, 15, 15, 0.925);
-  border-radius: 5px;
-  padding: 1% 1% 15px;
-  width: 320px;
-  display: flex;
-  flex-flow: column wrap;
-  position: absolute;
-  bottom: 8%;
-  right: 1%;
-}
-
-.todo-top-section {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.todo-middle-section {
+.time {
+  font-size: 17rem;
+  font-weight: 500;
   text-align: center;
-  margin-top: 10px;
+  margin: 0;
 }
 
-.todo-inbox-link {
-  margin-top: -5%;
-  padding-bottom: 1%;
-  font-size: 13px;
+.greeting-container, .greeting-container > span {
+  font-size: 5.4rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.todo-input-box,
-.todo-mini-input-box {
-  border: none;
-  color: #ccc;
-  font-size: 0.9rem;
-  text-align: left;
-  margin-top: 20px;
+.name:focus {
+  outline: none;
+  border-bottom: 3px white solid;
 }
 
-.custom-todo-checkbox {
-  color: #ccc;
-  font-size: 1rem;
-  margin-left: 10px;
-  margin-top: -1px;
-  width: 110px;
+.header {
+  height: 100px;
 }
 
-.todo-mini-item {
+.today-to-do {
+  font-size: 3.6rem;
+  text-align: center;
+  width: max-content;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
 }
 
-.todo-list-dropdown-options {
-  position: relative;
-  top: 28px;
-  right: 14px;
+input:checked ~ .custom-checkbox {
+  text-decoration: line-through;
 }
 
-.sub-ellipsis {
-  margin-top: 21px;
-  transition: opacity 0.3s;
-}
-.fa-ellipsis-h:hover {
-  cursor: pointer;
-  background: gray;
-  border-radius: 100%;
-  padding: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  height: 22px;
+.custom-checkbox {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0px 15px;
 }
 
-.dropdown-item {
-  font-size: 0.875rem;
-  margin-bottom: -7px;
-  padding: 5px;
-}
-
-/* search */
-
-.search {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-content: space-around;
-}
-
-.link-text {
-  font-size: 1.2rem;
-  margin-top: 5px;
-}
-.search-dropdown-options {
-  position: absolute;
-  top: 52px;
-  left: 13px;
-}
-
-.search-dropdown-browser-options {
-  position: absolute;
-  top: 12px;
-  left: 155px;
-}
-
-.search-input-box {
-  border: none;
-  font-size: 0.9rem;
-  text-align: left;
-  width: 200px;
-  margin-left: 5px;
-  height: 19px;
-  margin-top: 10px;
-}
-
-.search-input-box:hover {
-  border-bottom: 2px solid #fff;
-}
-.fa-search {
-  margin-left: 15px;
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-.browser-top-search {
-  display: inline-block;
-  width: 50px;
-  margin-top: 3px;
-  margin-left: -20px;
-  font-size: 1.2rem;
-}
-
-.new-link-lightbox {
+.fas {
   display: none;
-  flex-flow: column wrap;
-  width: 200px;
-  position: absolute;
-  top: 50px;
 }
 
-.new-link-lightbox label {
-  font-size: 0.895rem;
-  height: 60px;
+.today-to-do:hover > .fas {
+  display: inline;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.856);
 }
 
-.dropdown-toggle {
-  margin-top: -8px;
-  margin-left: -10px;
+.today-to-do > input {
+  display: none;
 }
 
-select {
-  background: none;
-  border: none;
-  margin-left: 90px;
-  margin-top: 12px;
-  appearance: none;
+.today-to-do:hover > input {
+  display: inline;
+  margin: auto;
+  font-size: 6rem;
 }
 
-/* settings */
-.settings {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-content: flex-end;
-  padding-bottom: 1%;
-}
-
-.author-info {
-  display: flex;
-  flex-flow: column wrap;
-  font-style: italic;
+.caption {
   font-size: 1.4rem;
-}
-
-.fa-cog {
-  color: #ccc;
-  font-size: 1.2rem;
-  margin-top: 60px;
-  margin-right: 10px;
 }
