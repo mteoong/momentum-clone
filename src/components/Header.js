@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class MainGoal extends Component {
+class Header extends Component {
     render() {
         return (
             <div className="container">
@@ -10,4 +10,4 @@ class MainGoal extends Component {
     }
 }
 
-export default MainGoal;
+export default Header;

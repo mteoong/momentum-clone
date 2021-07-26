@@ -2,6 +2,10 @@ const weather_key = "1986480656ec490d950204923202611";
 const image_key = "r-nC73nZ5X1_8DWlOiNlyeBg4UEgXGcIxzFL4nvafiE";
 
 export function getCurrentLocation() {
+    const error_handler = () => {
+        console.log("Failed to get location.");
+      };
+
     if (window.navigator.geolocation) {
         return new Promise((resolve, reject) => {
             let lat, lon, weather_url;
@@ -14,8 +18,8 @@ export function getCurrentLocation() {
                     ])
                 },
                 error => {
-                    reject(console.log('No geolocation'));
-                }
+                    reject(error_handler);
+                  }
             );
         });
     }
@@ -44,7 +48,7 @@ export function callQuoteApi() {
 }
 
 export function imageDetails() {
-    const image_url = `https://api.unsplash.com/photos/random/?client_id=${image_key}&collections=135648&orientation=landscape`;
+    const image_url = `https://api.unsplash.com/photos/random/?client_id=${image_key}&collections=8498187&orientation=landscape`;
     return fetch(image_url).then(resp => {
         if (resp.ok) {
             return resp.json();

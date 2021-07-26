@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import "./App.css";
-import TopContainer from "./components/TopContainer";
-import MiddleContainer from "./components/MiddleContainer";
-import LowerContainer from "./components/LowerContainer";
+import Header from "./components/Header";
+import Center from "./components/Center";
+import Footer from "./components/Footer";
 
 import { imageDetails } from "./utils";
 
@@ -13,21 +12,31 @@ class App extends Component {
       image: "",
       imageAuthor: {
         name: "",
-        description: ""
+        location: ""
       },
     }
   }
 
-  componentDidMount() {
-    async function getImageDetails() {
-      let imageDetails = await imageDetails();
-      this.setState({
-        image: imageDetails.urls.full,
-        imageAuthor: {
-          name: imageDetails.user.name,
-          description: imageDetails.alt_description,
-        },
-      })
+  componentDidMount = () => {
+    const getImageDetails = async () => {
+      let imageInfo = await imageDetails();
+      try {
+        this.setState({
+          image: imageInfo.urls.full,
+          imageAuthor: {
+            name: imageInfo.user.name,
+            location: imageInfo.location.name,
+          },
+        })
+      } catch(e) {
+        this.setState({
+          image: "https://images.unsplash.com/photo-1544297787-43ce4f544585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+          imageAuthor: {
+            name: "Damian Markutt",
+            location: "Chrachenhorn, Davos Monstein, Switzerland",
+          },
+        })
+      }
     }
     getImageDetails();
   }
@@ -47,9 +56,9 @@ class App extends Component {
     };
     return (
       <div className="app" style={backgroundStyle}>
-          <TopContainer />
-          <MiddleContainer />
-          <LowerContainer imageInfo={this.state.imageAuthor} />
+          <Header />
+          <Center />
+          <Footer imageInfo={this.state.imageAuthor} />
       </div>
     )
   }
