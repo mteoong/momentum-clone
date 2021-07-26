@@ -1,0 +1,12 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+
+  
