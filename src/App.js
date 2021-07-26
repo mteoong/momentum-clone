@@ -1,24 +1,40 @@
 import React, { Component } from "react";
+import "./App.css";
+import TopContainer from "./components/TopContainer";
+import MiddleContainer from "./components/MiddleContainer";
+import LowerContainer from "./components/LowerContainer";
 
+import { imageDetails } from "./utils";
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={
-        grid:[],
-        mouseClicked:false,
-        selected:"",
-        start_node:null,
-        end_node:null,
-        visited:0,
-        shortestPath:0,
-        number_of_nodes:0,
+    this.state = {
+      image: "",
+      imageAuthor: {
+        name: "",
+        description: ""
+      },
     }
   }
-  
+
+  componentDidMount() {
+    async function getImageDetails() {
+      let imageDetails = await imageDetails();
+      this.setState({
+        image: imageDetails.urls.full,
+        imageAuthor: {
+          name: imageDetails.user.name,
+          description: imageDetails.alt_description,
+        },
+      })
+    }
+    getImageDetails();
+  }
+
   render() {
-    const backgroundStyles = {
-      backgroundImage: `url( ${image} )`,
+    const backgroundStyle = {
+      backgroundImage: `url( ${this.state.image} )`,
       padding: "1%",
       height: "100vh",
       width: "100%",
@@ -30,9 +46,10 @@ class App extends Component {
       justifyContent: "space-between",
     };
     return (
-      <div style={backgroundStyles}>
-        <Title/>
-        <Toolbar/>
+      <div className="app" style={backgroundStyle}>
+          <TopContainer />
+          <MiddleContainer />
+          <LowerContainer imageInfo={this.state.imageAuthor} />
       </div>
     )
   }
