@@ -37,7 +37,7 @@ export function callWeatherAPI(val) {
 }
 
 export function callQuoteApi() {
-    const quote_url = "https://goquotes-api.herokuapp.com/api/v1/random?count=1";
+    const quote_url = "https://api.quotable.io/random";
     return fetch(quote_url).then(resp => {
         if (resp.ok) {
             return resp.json();

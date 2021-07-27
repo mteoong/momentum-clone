@@ -13,6 +13,7 @@ const Today = () => {
   const removeItem = () => {
     setTodo("");
     localStorage.setItem("checked", "false");
+    localStorage.setItem("todo", "");
   };
 
   const check = () => {
@@ -35,7 +36,7 @@ const Today = () => {
     <section className="main-goal">
       {!todo && (
           <div className="today-prompt">
-            <h2 className="white">What is your main focus today?</h2>
+            <h2 className="white">What is your main focus for today?</h2>
             <input
               type="text"
               className="input-box"

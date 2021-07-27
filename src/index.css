@@ -139,3 +139,36 @@ input:checked ~ .custom-checkbox {
 .caption {
   font-size: 1.4rem;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quote-text {
+  font-size: 2rem;
+  text-align: center;
+  margin: 9px;
+  padding-bottom: 0px;
+}
+
+.quote-author {
+  display: none;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-container:hover > .quote-text {
+  margin-top: 0px;
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.quote-container:hover > .quote-author {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
