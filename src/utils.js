@@ -60,3 +60,13 @@ export function imageDetails() {
         }
     }).catch(error => console.log("Error: ", error));
 }
+
+export const showDropdown = (index, className) => {
+    console.log("click", className);
+    let dropdown = document.getElementsByClassName(className);
+    if (dropdown[index].style.display === "block") {
+      dropdown[index].style.display = "none";
+    } else {
+      dropdown[index].style.display = "block";
+    }
+  };

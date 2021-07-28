@@ -217,3 +217,187 @@ input:checked ~ .custom-checkbox {
 .search-container {
   width: 100px;
 }
+
+.search {
+  font-size: 1.4rem;
+  padding: 2px;
+}
+
+.dropdown {
+  background-color: rgba(15, 15, 15, 0.925);
+  padding: 1%;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+}
+
+.gray-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 0.875rem;
+}
+
+/* todo section */
+.todo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.todo p {
+  cursor: pointer;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+}
+
+.todo-lightbox {
+  background-color: rgba(15, 15, 15, 0.925);
+  border-radius: 5px;
+  padding: 1% 1% 15px;
+  width: 320px;
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  bottom: 8%;
+  right: 1%;
+}
+
+.todo-top-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.todo-middle-section {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.todo-inbox-link {
+  margin-top: -5%;
+  padding-bottom: 1%;
+  font-size: 13px;
+}
+
+.todo-input-box,
+.todo-mini-input-box {
+  border: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.custom-todo-checkbox {
+  color: #ccc;
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-top: -1px;
+  width: 110px;
+}
+
+.todo-mini-item {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.todo-list-dropdown-options {
+  position: relative;
+  top: 28px;
+  right: 14px;
+}
+
+.sub-ellipsis {
+  margin-top: 21px;
+  transition: opacity 0.3s;
+}
+.fa-ellipsis-h:hover {
+  cursor: pointer;
+  background: gray;
+  border-radius: 100%;
+  padding: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  height: 22px;
+}
+
+.dropdown-item {
+  font-size: 1.4rem;
+  margin-bottom: -7px;
+  padding: 3px;
+  margin: 2px;
+  border-radius: 3px;
+}
+
+.search {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+.link-text {
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8; /* Firefox */
+}
+
+.search-dropdown-options {
+  position: absolute;
+  top: 52px;
+  left: 13px;
+}
+
+.search-input-box {
+  border: none;
+  font-size: 1.8rem;
+  text-align: left;
+  width: 200px;
+  height: 28px;
+  border-bottom: 2px solid #fff;
+  margin-left: 4px;
+}
+
+.small-input-box {
+  
+}
+
+.fa-search {
+  margin-left: 15px;
+  margin-right: none;
+  margin-top: 7px;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.new-link-lightbox {
+  display: none;
+  flex-flow: column wrap;
+  width: 200px;
+  position: absolute;
+  top: 50px;
+}
+
+.new-link-lightbox label {
+  font-size: 1.4rem;
+  height: 60px;
+}
+
+.dropdown-toggle {
+  margin-top: -8px;
+  margin-left: -10px;
+}
+
+select {
+  background: none;
+  border: none;
+  margin-left: 90px;
+  margin-top: 12px;
+  appearance: none;
+}
+

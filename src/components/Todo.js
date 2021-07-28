@@ -1,13 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import TodoLightBox from "./TodoLightBox";
+const Todo = () => {
+  const openTodoLightbox = () => {
+    let todoBox = document.getElementsByClassName("todo-lightbox");
+    todoBox[0].classList.toggle("hide");
+  };
 
-class MainGoal extends Component {
-    render() {
-        return (
-            <div className="todo-container">
+  return (
+    <div className="todo">
+      <p className="white" onClick={openTodoLightbox}>
+        Todo
+      </p>
 
-            </div>
-        );
-    }
-}
+      <TodoLightBox />
+    </div>
+  );
+};
 
-export default MainGoal;
+export default Todo;
