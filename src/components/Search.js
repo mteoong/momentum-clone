@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class MainGoal extends Component {
+class Search extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="search-container">
 
             </div>
         );
     }
 }
 
-export default MainGoal;
+export default Search;

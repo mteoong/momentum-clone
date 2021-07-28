@@ -1,39 +1,42 @@
-const weather_key = "1986480656ec490d950204923202611";
+const weather_key = "732e4e6b58929775651f5fc1f4e48027";
 const image_key = "r-nC73nZ5X1_8DWlOiNlyeBg4UEgXGcIxzFL4nvafiE";
 
-export function getCurrentLocation() {
-    const error_handler = () => {
-        console.log("Failed to get location.");
-      };
+let lat = 37.773972;
+let lon = -122.431297;
+let weather_url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${weather_key}`;
 
-    if (window.navigator.geolocation) {
-        return new Promise((resolve, reject) => {
-            let lat, lon, weather_url;
-            navigator.geolocation.getCurrentPosition(
-                pos => {
-                    resolve([
-                        (lat = pos.coords.latitude),
-                        (lon = pos.coords.longitude),
-                        (weather_url = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weather_key}`)
-                    ])
-                },
-                error => {
-                    reject(error_handler);
-                  }
-            );
-        });
-    }
+export function getCurrLocation() {
+    if ( navigator.permissions && navigator.permissions.query) {
+          navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+              const permission = result.state;
+              if ( permission === 'granted' || permission === 'prompt' ) {
+                  _onGetCurrentLocation();
+              } 
+          });
+    } else if (navigator.geolocation) {
+        _onGetCurrentLocation();
+    } 
 }
 
-export function callWeatherAPI(val) {
-    const url = val[2];
-    return fetch(url).then(resp => {
+function _onGetCurrentLocation () {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude; 
+        weather_url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${weather_key}`;
+    })
+}
+
+export function callWeatherApi() {
+    console.log(weather_url);
+    return fetch(weather_url)
+      .then(resp => {
         if (resp.ok) {
-            return resp.json();
+          return resp.json();
         } else {
-            return Promise.reject("Weather fetch request failed.");
+          return Promise.reject("Openweathermap data unable to load");
         }
-    }).catch(error => console.log("Error: ", error));
+      })
+      .catch(error => console.log("Failed to get Weather: ", error));
 }
 
 export function callQuoteApi() {
