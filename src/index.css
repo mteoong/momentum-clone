@@ -234,7 +234,10 @@ input:checked ~ .custom-checkbox {
 .gray-button {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 1.4rem;
+  margin: 1px;
+  text-align: center;
+  margin: auto;
 }
 
 /* todo section */
@@ -351,6 +354,7 @@ input:checked ~ .custom-checkbox {
   position: absolute;
   top: 52px;
   left: 13px;
+  
 }
 
 .search-input-box {
@@ -364,7 +368,20 @@ input:checked ~ .custom-checkbox {
 }
 
 .small-input-box {
-  
+  border: none;
+  background: transparent;
+  border-bottom: 3px white solid;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  height: 28px;
+  margin-top: 0;
+  margin: auto;
+  display: block;
+  font-size: 1.8rem;
+  width: 100%;
+  outline: none;
+  font-weight: 400;
 }
 
 .fa-search {

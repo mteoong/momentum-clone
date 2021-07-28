@@ -104,7 +104,7 @@ class Search extends Component {
                     <input
                         type="text"
                         name="name"
-                        className="input-box"
+                        className="small-input-box"
                         onChange={e => this.captureNameValue(e)}
                     />
                     </label>
@@ -113,7 +113,6 @@ class Search extends Component {
                     <input
                         type="text"
                         className="small-input-box"
-                        placeholder="example.com"
                         onChange={e => this.captureLinkValue(e)}
                     />
                     </label>
