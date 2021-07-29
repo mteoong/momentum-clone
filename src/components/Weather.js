@@ -17,8 +17,8 @@ class Weather extends Component {
             let location = await getCurrLocation();
             let weather = await callWeatherApi();
             this.setState({
-                icon: weather.weather[0].icon,
-                temperature: weather.main.temp,
+                icon: weather.weather[0].icon || "03n",
+                temperature: weather.main.temp || "57",
                 location: weather.name,
             });
           }

@@ -5,7 +5,7 @@ class Greeting extends Component {
     super(props);
     this.state = {
       typeGreeting: this.typeGreeting(),
-      name: "",
+      name: "Marc",
     };
   }
 

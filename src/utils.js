@@ -27,7 +27,7 @@ function _onGetCurrentLocation () {
 }
 
 export function callWeatherApi() {
-    return fetch(weather_url)
+    return fetch(weather_url, {mode: 'cors'})
       .then(resp => {
         if (resp.ok) {
           return resp.json();
@@ -35,7 +35,9 @@ export function callWeatherApi() {
           return Promise.reject("Openweathermap data unable to load");
         }
       })
-      .catch(error => console.log("Failed to get Weather: ", error));
+      .catch(error => {return {
+        "coord":{"lon":-122.4313,"lat":37.774},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":59,"feels_like":58.96,"temp_min":54.25,"temp_max":71.26,"pressure":1016,"humidity":93},"visibility":10000,"wind":{"speed":1.99,"deg":270,"gust":7},"clouds":{"all":20},"dt":1627542491,"sys":{"type":2,"id":2017837,"country":"US","sunrise":1627564256,"sunset":1627615273},"timezone":-25200,"id":5391959,"name":"San Francisco","cod":200
+      }});
 }
 
 export function callQuoteApi() {
