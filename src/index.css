@@ -140,6 +140,7 @@ input:checked ~ .custom-checkbox {
   font-size: 1.4rem;
   color: rgb(202, 202, 202);
   width: 300px;
+  padding: 5px;
 }
 
 .footer {
@@ -153,6 +154,7 @@ input:checked ~ .custom-checkbox {
   text-align: center;
   margin: 9px;
   padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .quote-author {
@@ -173,10 +175,6 @@ input:checked ~ .custom-checkbox {
   display: block;
   margin: 0;
   padding: 0;
-}
-
-.todo-container {
-  width: 300px;
 }
 
 .weather-container {
@@ -245,12 +243,14 @@ input:checked ~ .custom-checkbox {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  width: 300px;
 }
 
 .todo p {
   cursor: pointer;
   justify-content: flex-end;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  margin: none;
 }
 
 .todo-lightbox {
@@ -266,14 +266,22 @@ input:checked ~ .custom-checkbox {
 }
 
 .todo-top-section {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  margin: none;
+}
+
+.todo-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin: none;
+  margin-bottom: none;
+  text-align: center;
+  height: 18px;
 }
 
 .todo-middle-section {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .todo-inbox-link {
@@ -286,9 +294,15 @@ input:checked ~ .custom-checkbox {
 .todo-mini-input-box {
   border: none;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   text-align: left;
   margin-top: 20px;
+  background: transparent;
+  border-bottom: 3px white solid;
+  text-align: left;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
 }
 
 .custom-todo-checkbox {
@@ -343,6 +357,10 @@ input:checked ~ .custom-checkbox {
 .link-text {
   font-size: 1.8rem;
   margin-top: 5px;
+}
+
+.hide {
+  display: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -416,5 +434,26 @@ select {
   margin-left: 90px;
   margin-top: 12px;
   appearance: none;
+}
+
+span.todo-item-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+}
+
+label.custom-todo-checkbox {
+  display: block;
+  color: white;
+  width: 100%;
+  padding: 2px;
+  font-size: 1.6rem;
+}
+
+.todo-checkbox {
+  padding: 2px;
+  margin-bottom: 5px;
+  border-radius: 50%;
 }
 

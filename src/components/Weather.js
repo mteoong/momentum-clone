@@ -23,7 +23,6 @@ class Weather extends Component {
             });
           }
           getWeather();
-          console.log(this.state.temperature + this.state.location);
     }
     
     render() {

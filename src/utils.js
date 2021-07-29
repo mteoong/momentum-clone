@@ -27,7 +27,6 @@ function _onGetCurrentLocation () {
 }
 
 export function callWeatherApi() {
-    console.log(weather_url);
     return fetch(weather_url)
       .then(resp => {
         if (resp.ok) {
@@ -62,7 +61,6 @@ export function imageDetails() {
 }
 
 export const showDropdown = (index, className) => {
-    console.log("click", className);
     let dropdown = document.getElementsByClassName(className);
     if (dropdown[index].style.display === "block") {
       dropdown[index].style.display = "none";
